@@ -1,2 +1,2 @@
 # mandela-archives-p5
-see README
+is a psychological horror training simulation built in p5.js, styled after degraded VHS-era instructional software. The project guides the player through a sequence of procedural “modules” that initially resemble standard call-handling assessments, but gradually distort into hostile, self-aware systems that monitor behaviour, remove agency, and question the player’s identity. Designed to prioritise atmosphere and psychological pressure over traditional gameplay, the experience uses analogue visual artefacts, controlled pacing, and scripted anomalies to blur the line between test, observer, and subject.
