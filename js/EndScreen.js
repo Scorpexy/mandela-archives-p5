@@ -20,7 +20,7 @@ class EndScreen extends Screen {
   }
 
   update() {
-    // Fade in
+
     if (this.fadeIn) {
       this.alpha += 4;
       if (this.alpha >= 255) {
@@ -29,15 +29,15 @@ class EndScreen extends Screen {
       }
     }
 
-    // CRT motion
+    // CRT MOTION AND SUCH
     this.scanOffset += 0.5;
     this.barY = (this.barY + 1) % height;
 
-    // subtle jitter
+
     this.jitterX = random(-0.6, 0.6);
     this.jitterY = random(-0.35, 0.35);
 
-    // random subliminal flicker
+    // SUBLIMINAL FLICKER
     if (random() < 0.015) this.flashTimer = 6;
     if (this.flashTimer > 0) this.flashTimer--;
   }
@@ -51,10 +51,7 @@ class EndScreen extends Screen {
     this.drawRollingBar();
 
     textFont(this.font);
-
-    // ----------------------------------------------------
-    // MAIN TEXT
-    // ----------------------------------------------------
+// THIS IS THE MAIN TEXT
     push();
     translate(this.jitterX, this.jitterY);
 
@@ -64,7 +61,7 @@ class EndScreen extends Screen {
     textSize(48);
     text(this.title, width/2, height/2 - 50);
 
-    // subtitle color
+    // CONTROLS SUBTITLE COLOUR
     textSize(26);
     if (this.subtitle.startsWith("PASSED")) fill(0, 255, 0, this.alpha);
     else if (this.subtitle.startsWith("FAILED")) fill(255, 0, 0, this.alpha);
@@ -74,17 +71,12 @@ class EndScreen extends Screen {
 
     pop();
 
-    // ----------------------------------------------------
-    // "CLICK TO RESTART"
-    // ----------------------------------------------------
     fill(255,150);
     textAlign(CENTER, CENTER);
     textSize(16);
     text("CLICK ANYWHERE TO RESTART TRAINING", width/2, height - 40);
 
-    // ----------------------------------------------------
-    // SUBLIMINAL FLASH
-    // ----------------------------------------------------
+
     if (this.flashTimer > 0) {
       fill(255, random(120,220));
       noStroke();
@@ -93,13 +85,11 @@ class EndScreen extends Screen {
   }
 
   checkClick() {
-    // Restart the whole program
+
     currentScreen = new TitleScreen(this.font, loadingSound);
   }
 
-  // ----------------------------------------------------
-  // CRT EFFECT HELPERS (copied from your style)
-  // ----------------------------------------------------
+
   drawScanlines() {
     stroke(200,200,200,90);
     let o = this.scanOffset % 4;
@@ -128,6 +118,8 @@ class EndScreen extends Screen {
       rect(i,0,1,height);
       rect(width-1-i,0,1,height);
     }
+
+
     for (let j=0; j<80; j++) {
       fill(0,map(j,0,79,160,0));
       rect(0,j,width,1);
