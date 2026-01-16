@@ -244,7 +244,7 @@ class ModuleFiveScreen extends Screen {
       this.displayBlackout();
     }
 
-    // Tiny one-frame micro text sometimes, in later phases
+
     if (this.phase === "TAUNT" || this.phase === "BUTTON") {
       if (random() < 0.004) {
         push();
@@ -296,7 +296,7 @@ class ModuleFiveScreen extends Screen {
 
 
   displayLogging() {
-    // Header
+    /
     textAlign(CENTER, TOP);
     textSize(16);
     fill(200, 40, 40, 180);
@@ -329,7 +329,7 @@ class ModuleFiveScreen extends Screen {
 
 
   displayButton() {
-    // Header
+    // CREATES THE HEADER
     textAlign(CENTER, TOP);
     textSize(16);
     fill(200, 40, 40, 180);
@@ -341,7 +341,7 @@ class ModuleFiveScreen extends Screen {
     fill(200, 40, 40, 220);
     text("YOU MAY REQUEST TO END THIS LINE.", width / 2, height / 2 - 60);
 
-    // Button
+    // CREATES THE BUTTON!
     let hovering =
       mouseX > this.buttonX &&
       mouseX < this.buttonX + this.buttonW &&
@@ -431,7 +431,7 @@ class ModuleFiveScreen extends Screen {
     }
 
     if (this.phase === "LOGGING") {
-      // Impulsive
+      // OOOOOOO SCARY IMPULSIVE
       this.setFlash("IMPULSIVE RESPONSE LOGGED.");
       return;
     }
