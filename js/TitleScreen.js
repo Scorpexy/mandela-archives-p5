@@ -24,9 +24,9 @@ class TitleScreen {
     this.buttonPressed = false;
 
     // STATE FLAGS
-    this.started = false;       // player clicked start
-    this.disappeared = false;   // UI fades out
-    this.finished = false;      // ready for next screen
+    this.started = false;       
+    this.disappeared = false;   
+    this.finished = false;      
 
     // BRIGHTNESS FLICKER
     this.brightnessFlicker = 0;
@@ -71,7 +71,7 @@ class TitleScreen {
   display() {
     background(5);
 
-    // --- CRT EFFECTS ---
+    // SCARY CRRT EFFECTS
     this.drawScanlines();
     this.drawStatic();
     this.drawVignette();
@@ -133,10 +133,7 @@ class TitleScreen {
     // INITIATES BRIGHTNESS FLICKER
     this.drawBrightnessFlicker();
   }
-
-  // ---------------------------------------------------
-  // BUTTON HANDLING
-  // ---------------------------------------------------
+// THIS CONTROLS ALL THE BUTTON HANDLING ETC
   checkClick(mx, my) {
     if (this.disappeared) return;
 
@@ -154,9 +151,7 @@ class TitleScreen {
     }
   }
 
-  // ---------------------------------------------------
-  // FORMATTING + EFFECT HELPERS
-  // ---------------------------------------------------
+// THIS PART CONTROLS ALL THE TEXT STUFF LIKE COLOUR ETC
 
   textRGB(txt, x, y, baseCol) {
     push();
