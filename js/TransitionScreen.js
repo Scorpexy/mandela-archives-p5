@@ -203,10 +203,10 @@ class TransitionScreen extends Screen {
 
       // CONTROLS THE TITLE FLICKER OF M5
       if (this.moduleNumber === 5 && this.flickerState) {
-        fill(200, 40, 40, this.alpha); // RED intrusive title
+        fill(200, 40, 40, this.alpha); // SCARY RED TITLE
         text("WHO ARE YOU?", width / 2 + random(-2, 2), 40 + random(-2, 2));
       } else {
-        fill(255, this.alpha); // NORMAL title
+        fill(255, this.alpha); // "NORMAL" TITLE
         text(typedTitle, width / 2 + random(-1, 1), 40 + random(-1, 1));
       }
 
@@ -223,7 +223,7 @@ class TransitionScreen extends Screen {
       }
     }
 
-    // Ghost flicker
+    // SCARY GHOST FLICKER
     if (random() < 0.02) {
       textSize(16);
       fill(255, random(40, 120));
